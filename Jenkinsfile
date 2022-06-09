@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'ls -al'
                 sh 'npm install'
             }
         }
