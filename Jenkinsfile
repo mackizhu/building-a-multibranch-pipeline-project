@@ -7,13 +7,12 @@ pipeline {
     }
     environment {
         CI = 'true'
-        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
     }
     stages {
         stage('Build') {
             steps {
                 sh 'ls -al'
-                sh 'npm install'
+                sh 'npm install --force'
             }
         }
         stage('Test') {
