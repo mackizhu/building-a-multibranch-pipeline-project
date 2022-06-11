@@ -4,13 +4,13 @@ pipeline {
         CI = 'true'
     }
     stages {
-        agent {
-            docker {
-                image 'node:8-alpine'
-                args '-u root:root -p 3000:3000 -p 5000:5000'
-            }
-        }
         stage('Build') {
+            agent {
+                docker {
+                    image 'node:8-alpine'
+                    args '-u root:root -p 3000:3000 -p 5000:5000'
+                }
+            }
             steps {
                 sh 'pwd'
                 sh 'ls -al'
